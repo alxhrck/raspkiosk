@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
-#set -eo pipefail
-exec >/var/
-
-export DISPLAY=:0
+set -eo pipefail
 
 xset -dpms      # disable DPMS (Energy Star) features.
 xset s off      # disable screen saver
@@ -31,7 +28,7 @@ xterm -bg black &
     --disable-sync \
     --no-first-run \
     --no-sandbox \
-    --user-data-dir='/data/webkiosk' \
+    --user-data-dir='/opt/raspkiosk/data' \
     --show-component-extension-options \
     --disable-background-networking \
     --enable-remote-extensions \
