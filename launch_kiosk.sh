@@ -17,7 +17,6 @@ if [ -L $INSTALL_PATH/data/SingletonCookie ]; then
 fi
 
 openbox-session &
-xterm -bg black &
 /usr/bin/chromium-browser \
     --kiosk \
     --disable-touch-drag-drop \
