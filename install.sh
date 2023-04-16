@@ -1,4 +1,4 @@
 #!/bin/sh
 
 apt update
-apt install -y openbox chromium-browser xdotool unclutter 
+apt install -y xinit openbox chromium-browser xdotool unclutter 
