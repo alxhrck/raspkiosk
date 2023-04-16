@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 set -eo pipefail
-
+INSTALL_PATH=/opt/raspkoisk
 xset -dpms      # disable DPMS (Energy Star) features.
 xset s off      # disable screen saver
 xset s noblank  # don't blank the video device
 
 unclutter -idle 0.5 -root &     # hides your cursor after inactivity
 
-[[ -e /data/webkiosk/Default/Preferences ]] && {
-  sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' /data/webkiosk/Default/Preferences
-  sed -i 's/"exit_type":"Crashed"/"exit_type":"None"/' /data/webkiosk/Default/Preferences
+[[ -e $INSTALL_PATH/data/Default/Preferences ]] && {
+  sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' $INSTALL_PATH/data/Default/Preferences
+  sed -i 's/"exit_type":"Crashed"/"exit_type":"None"/' $INSTALL_PATH/data/Default/Preferences
 }
 
-if [ -L /data/webkiosk/SingletonCookie ]; then
-  rm -rf /data/webkiosk/Singleton*
+if [ -L $INSTALL_PATH/data/SingletonCookie ]; then
+  rm -rf $INSTALL_PATH/data/Singleton*
 fi
 
 openbox-session &
@@ -28,7 +28,7 @@ xterm -bg black &
     --disable-sync \
     --no-first-run \
     --no-sandbox \
-    --user-data-dir='/opt/raspkiosk/data' \
+    --user-data-dir='$INSTALL_PATH/data' \
     --show-component-extension-options \
     --disable-background-networking \
     --enable-remote-extensions \
