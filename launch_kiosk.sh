@@ -5,7 +5,7 @@ xset -dpms      # disable DPMS (Energy Star) features.
 xset s off      # disable screen saver
 xset s noblank  # don't blank the video device
 
-unclutter &     # hides your cursor after inactivity
+unclutter -idle 0.5 -root &     # hides your cursor after inactivity
 
 [[ -e /data/webkiosk/Default/Preferences ]] && {
   sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' /data/webkiosk/Default/Preferences
