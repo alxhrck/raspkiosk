@@ -1,0 +1,11 @@
+[Unit]
+Description=Raspberry Pi Kiosk
+Wants=network.service
+After=multi-user.target
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=/usr/bin/startx /etc/X11/Xsession /opt/webkiosk.sh -- -keeptty
+[Install]
+WantedBy=multi-user.target
