@@ -21,19 +21,20 @@ if [ -L $INSTALL_PATH/data/SingletonCookie ]; then
 fi
 
 /usr/bin/chromium-browser \
-    --disable-background-networking \
-    --disable-component-extensions-with-background-pages \
-    --disable-domain-reliability \
-    --disable-extensions \
-    --disable-features=MediaRouter \
-    --disable-sync \
-    --disable-touch-drag-drop \
-    --enable-logging=stderr \
-    --enable-zero-copy \
-    --kiosk \
-    --log-level=0 \
-    --no-first-run \
-    --use-gl=desktop \
-    --user-data-dir=$INSTALL_PATH/data \
-    --window-position=0,0 \
-    $URLS
+  --disable-background-networking \
+  --disable-component-extensions-with-background-pages \
+  --disable-crash-reporter \
+  --disable-domain-reliability \
+  --disable-extensions \
+  --disable-features=MediaRouter \
+  --disable-sync \
+  --disable-touch-drag-drop \
+  --enable-logging=stderr \
+  --enable-zero-copy \
+  --kiosk \
+  --log-level=0 \
+  --no-first-run \
+  --use-gl=desktop \
+  --user-data-dir=$INSTALL_PATH/data \
+  --window-position=0,0 \
+  $URLS
