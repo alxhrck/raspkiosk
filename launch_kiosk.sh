@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
+
+INSTALL_PATH=/opt/raspkiosk
+
 set -eo pipefail
-INSTALL_PATH=/opt/raspkoisk
+
 xset -dpms      # disable DPMS (Energy Star) features.
 xset s off      # disable screen saver
 xset s noblank  # don't blank the video device
