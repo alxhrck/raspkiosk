@@ -9,6 +9,6 @@ Environment=XAUTHORITY=/home/pi/.Xauthority
 Restart=on-abort
 User=pi
 Group=pi
-ExecStart=/usr/bin/startx /etc/X11/Xsession /opt/raspkiosk/launch_kiosk.sh -- -keeptty
+ExecStart=/bin/bash /opt/raspkiosk/launch_kiosk.sh
 [Install]
 WantedBy=graphical.target
