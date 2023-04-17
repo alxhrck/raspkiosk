@@ -23,7 +23,7 @@ fi
 /usr/bin/chromium-browser \
   --disable-background-networking \
   --disable-component-extensions-with-background-pages \
-  --disable-crash-reporter \
+  --disable-breakpad \ 
   --disable-domain-reliability \
   --disable-extensions \
   --disable-features=MediaRouter \
