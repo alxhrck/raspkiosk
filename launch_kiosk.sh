@@ -19,28 +19,20 @@ if [ -L $INSTALL_PATH/data/SingletonCookie ]; then
   rm -rf $INSTALL_PATH/data/Singleton*
 fi
 
-openbox-session &
 /usr/bin/chromium-browser \
-    --kiosk \
-    --disable-touch-drag-drop \
-    --disable-overlay-scrollbar \
-    --window-position=0,0 \
-    --disable-session-crashed-bubble \
-    --disable-infobars \
-    --disable-sync \
-    --no-first-run \
-    --no-sandbox \
-    --user-data-dir='$INSTALL_PATH/data' \
-    --show-component-extension-options \
     --disable-background-networking \
-    --enable-remote-extensions \
-    --enable-native-gpu-memory-buffers \
-    --disable-quic \
-    --enable-fast-unload \
-    --enable-tcp-fast-open \
-    --ignore-gpu-blacklist \
-    --use-gl=desktop \
-    --disable-gpu-compositing \
-    --force-gpu-rasterization \
+    --disable-component-extensions-with-background-pages \
+    --disable-domain-reliability \
+    --disable-extensions \
+    --disable-features=MediaRouter \
+    --disable-sync \
+    --disable-touch-drag-drop \
+    --enable-logging=stderr \
     --enable-zero-copy \
+    --kiosk \
+    --log-level=0 \
+    --no-first-run \
+    --use-gl=desktop \
+    --user-data-dir=$INSTALL_PATH/data \
+    --window-position=0,0 \
     'https://apps.k3s.hrck.net/grafana/d/7u_qyox4k/network-monitoring'
