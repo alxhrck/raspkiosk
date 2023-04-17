@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 INSTALL_PATH=/opt/raspkiosk
+URLS='https://apps.k3s.hrck.net/grafana/d/7u_qyox4k/network-monitoring'
 
 set -eo pipefail
 
@@ -35,4 +36,4 @@ fi
     --use-gl=desktop \
     --user-data-dir=$INSTALL_PATH/data \
     --window-position=0,0 \
-    'https://apps.k3s.hrck.net/grafana/d/7u_qyox4k/network-monitoring'
+    $URLS
